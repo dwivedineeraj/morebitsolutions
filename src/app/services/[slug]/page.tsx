@@ -1,16 +1,17 @@
-"use client"
-
-import { useParams, useRouter } from "next/navigation"
 import { services } from "@/lib/services"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft, CheckCircle2, Sparkles, ArrowRight } from "lucide-react"
-import { motion } from "framer-motion"
 
-export default function ServiceDetailPage() {
-    const { slug } = useParams()
-    const router = useRouter()
+export function generateStaticParams() {
+    return services.map((service) => ({
+        slug: service.slug,
+    }))
+}
+
+export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
+    const { slug } = params
     const service = services.find(s => s.slug === slug)
 
     if (!service) {
@@ -18,7 +19,7 @@ export default function ServiceDetailPage() {
             <div className="flex flex-col items-center justify-center min-h-screen p-4 text-center">
                 <h1 className="text-4xl font-black mb-4">Service Not Found</h1>
                 <p className="text-xl text-muted-foreground mb-8">The engineering scope you are looking for does not exist.</p>
-                <Button onClick={() => router.push("/services")}>Back to Services</Button>
+                <Button asChild><Link href="/services">Back to Services</Link></Button>
             </div>
         )
     }
@@ -29,11 +30,7 @@ export default function ServiceDetailPage() {
             <section className="relative overflow-hidden bg-background pt-24 pb-12 lg:pt-32 lg:pb-16 mt-16">
                 <div className="absolute inset-0 z-0 mesh-gradient opacity-20" />
                 <div className="container relative z-10 px-4 sm:px-8">
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="max-w-7xl"
-                    >
+                    <div className="max-w-7xl">
                         <Link 
                             href="/services" 
                             className="inline-flex items-center text-sm font-bold text-primary mb-12 hover:translate-x-[-4px] transition-transform"
@@ -55,7 +52,7 @@ export default function ServiceDetailPage() {
                         <p className="text-xl text-muted-foreground leading-relaxed lg:text-3xl max-w-5xl">
                             {service.description}
                         </p>
-                    </motion.div>
+                    </div>
                 </div>
             </section>
 

@@ -30,12 +30,17 @@ export default function ContactPage() {
         setStatus("submitting")
 
         try {
-            const response = await fetch("/api/contact", {
+            const response = await fetch("https://formsubmit.co/ajax/support@morebitsolutions.com", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    "Accept": "application/json"
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    ...formData,
+                    _subject: `[Bespoke Inquiry] ${formData.subject}`,
+                    _template: "table"
+                }),
             })
 
             if (!response.ok) throw new Error("Failed to send message")

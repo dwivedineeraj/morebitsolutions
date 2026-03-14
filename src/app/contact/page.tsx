@@ -19,14 +19,14 @@ export default function ContactPage() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        
+
         // Start "Intelligent" Flow
         setStatus("analyzing")
         await new Promise(r => setTimeout(r, 1500))
-        
+
         setStatus("matching")
         await new Promise(r => setTimeout(r, 1500))
-        
+
         setStatus("submitting")
 
         try {
@@ -47,7 +47,7 @@ export default function ContactPage() {
 
             setStatus("success")
             setFormData({ name: "", email: "", subject: "Bespoke ERP Design", message: "" })
-            
+
             // Revert to idle after 5 seconds
             setTimeout(() => setStatus("idle"), 5000)
         } catch (error) {
@@ -64,40 +64,9 @@ export default function ContactPage() {
     return (
         <div className="flex flex-col min-h-screen">
             {/* Premium Header */}
-            <section className="relative overflow-hidden bg-background py-32 lg:py-48">
-                <div className="absolute inset-0 z-0 mesh-gradient opacity-40" />
-                <div className="absolute right-[-10%] top-[10%] h-[500px] w-[500px] rounded-full bg-primary/10 blur-[120px] animate-pulse-slow" />
+            <section className="relative overflow-hidden bg-background py-10 lg:py-10">
 
-                <div className="container relative z-10 px-4 sm:px-8 text-center">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className="mb-8 inline-flex items-center rounded-full bg-white/60 px-4 py-1.5 text-sm font-semibold text-primary shadow-sm backdrop-blur-md border glass-border"
-                    >
-                        <Sparkles className="mr-2 h-4 w-4" />
-                        <span>Ready for Bespoke Innovation?</span>
-                    </motion.div>
-
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-5xl font-black tracking-tighter sm:text-7xl lg:text-9xl mb-8"
-                    >
-                        Let&apos;s Build Your <br /> <span className="text-secondary italic">Unique</span> Solution
-                    </motion.h1>
-
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
-                        className="max-w-3xl mx-auto text-xl text-muted-foreground leading-relaxed lg:text-3xl"
-                    >
-                        We specialize in artisan engineering for businesses that have outgrown
-                        one-size-fits-all software. Start the conversation for your bespoke
-                        ecosystem today.
-                    </motion.p>
-                </div>
-            </section>
+            </section >
 
             <section className="py-24 -mt-20 relative z-20">
                 <div className="container px-4 sm:px-8">
@@ -213,30 +182,29 @@ export default function ContactPage() {
                                             />
                                         </div>
 
-                                        <Button 
-                                            type="submit" 
-                                            size="lg" 
-                                            className={`h-20 w-full rounded-2xl text-xl font-black shadow-2xl transition-all duration-500 overflow-hidden relative ${
-                                                status === "success" ? "bg-green-500 hover:bg-green-500" :
+                                        <Button
+                                            type="submit"
+                                            size="lg"
+                                            className={`h-20 w-full rounded-2xl text-xl font-black shadow-2xl transition-all duration-500 overflow-hidden relative ${status === "success" ? "bg-green-500 hover:bg-green-500" :
                                                 status === "error" ? "bg-red-500 hover:bg-red-500" :
-                                                "bg-primary shadow-primary/20"
-                                            }`} 
+                                                    "bg-primary shadow-primary/20"
+                                                }`}
                                             disabled={status !== "idle"}
                                         >
                                             <AnimatePresence mode="wait">
                                                 {status === "idle" && (
-                                                    <motion.span 
+                                                    <motion.span
                                                         key="idle"
                                                         initial={{ y: 20, opacity: 0 }}
                                                         animate={{ y: 0, opacity: 1 }}
                                                         exit={{ y: -20, opacity: 0 }}
                                                         className="flex items-center"
                                                     >
-                                                        Initialize Scoping Session <ArrowRight className="ml-2 h-6 w-6" />
+                                                        Initiate Scoping Session <ArrowRight className="ml-2 h-6 w-6" />
                                                     </motion.span>
                                                 )}
                                                 {status === "analyzing" && (
-                                                    <motion.span 
+                                                    <motion.span
                                                         key="analyzing"
                                                         initial={{ y: 20, opacity: 0 }}
                                                         animate={{ y: 0, opacity: 1 }}
@@ -248,7 +216,7 @@ export default function ContactPage() {
                                                     </motion.span>
                                                 )}
                                                 {status === "matching" && (
-                                                    <motion.span 
+                                                    <motion.span
                                                         key="matching"
                                                         initial={{ y: 20, opacity: 0 }}
                                                         animate={{ y: 0, opacity: 1 }}
@@ -260,7 +228,7 @@ export default function ContactPage() {
                                                     </motion.span>
                                                 )}
                                                 {status === "submitting" && (
-                                                    <motion.span 
+                                                    <motion.span
                                                         key="submitting"
                                                         initial={{ y: 20, opacity: 0 }}
                                                         animate={{ y: 0, opacity: 1 }}
@@ -272,7 +240,7 @@ export default function ContactPage() {
                                                     </motion.span>
                                                 )}
                                                 {status === "success" && (
-                                                    <motion.span 
+                                                    <motion.span
                                                         key="success"
                                                         initial={{ scale: 0.8, opacity: 0 }}
                                                         animate={{ scale: 1, opacity: 1 }}
@@ -283,7 +251,7 @@ export default function ContactPage() {
                                                     </motion.span>
                                                 )}
                                                 {status === "error" && (
-                                                    <motion.span 
+                                                    <motion.span
                                                         key="error"
                                                         initial={{ scale: 0.8, opacity: 0 }}
                                                         animate={{ scale: 1, opacity: 1 }}
@@ -300,6 +268,6 @@ export default function ContactPage() {
                     </div>
                 </div>
             </section>
-        </div>
+        </div >
     )
 }

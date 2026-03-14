@@ -232,7 +232,7 @@ export default function ContactPage() {
                                                         exit={{ y: -20, opacity: 0 }}
                                                         className="flex items-center"
                                                     >
-                                                        Initiate Engineering Sync <ArrowRight className="ml-2 h-6 w-6" />
+                                                        Initialize Scoping Session <ArrowRight className="ml-2 h-6 w-6" />
                                                     </motion.span>
                                                 )}
                                                 {status === "analyzing" && (
@@ -244,7 +244,7 @@ export default function ContactPage() {
                                                         className="flex items-center gap-3"
                                                     >
                                                         <Loader2 className="h-6 w-6 animate-spin" />
-                                                        Analyzing Requirements...
+                                                        Noting down requirements...
                                                     </motion.span>
                                                 )}
                                                 {status === "matching" && (
@@ -256,7 +256,7 @@ export default function ContactPage() {
                                                         className="flex items-center gap-3"
                                                     >
                                                         <Sparkles className="h-6 w-6 animate-pulse" />
-                                                        Matching Lead Engineer...
+                                                        Waking up the lead architect with fresh cold brew...
                                                     </motion.span>
                                                 )}
                                                 {status === "submitting" && (
@@ -279,7 +279,7 @@ export default function ContactPage() {
                                                         className="flex items-center gap-3"
                                                     >
                                                         <CheckCircle2 className="h-6 w-6 text-white" />
-                                                        Engineer Notified!
+                                                        Request successfully submitted!
                                                     </motion.span>
                                                 )}
                                                 {status === "error" && (

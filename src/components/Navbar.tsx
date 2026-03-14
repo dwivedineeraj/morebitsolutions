@@ -135,7 +135,7 @@ export function Navbar() {
                     <div className="hidden md:flex items-center space-x-4">
                         <Button asChild className="h-11 rounded-xl bg-primary px-6 font-bold text-white shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
                             <Link href="/contact" className="flex items-center">
-                                Elevate Your Business <ArrowRight className="ml-2 h-4 w-4" />
+                                Contact Us <ArrowRight className="ml-2 h-4 w-4" />
                             </Link>
                         </Button>
                     </div>

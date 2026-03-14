@@ -1,45 +1,10 @@
-import { CheckCircle2, Headphones, Layers, ShieldCheck, Zap, Globe, Cpu, Users, Bot, Database } from "lucide-react"
+import { CheckCircle2, Headphones, Layers, ShieldCheck, Zap, Globe, Cpu, Users, Bot, Database, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
+import { services } from "@/lib/services"
 
-const services = [
-    {
-        title: "Technology Strategy",
-        description: "We help you navigate the complex landscape of enterprise technology. From digital transformation roadmaps to architectural reviews, our consultants ensure your tech alignment with business goals.",
-        icon: Globe,
-        tags: ["Transformation", "Architecture", "Scaling"]
-    },
-    {
-        title: "Data Engineering for AI",
-        description: "Build the foundation for intelligent systems. We specialize in data consolidation, pipeline automation, and preparing your enterprise data for AI/ML readiness.",
-        icon: Database,
-        tags: ["Big Data", "Data Lakes", "MLOps"]
-    },
-    {
-        title: "AI Agents & Automation",
-        description: "Transform your operations with intelligent agents capable of autonomous decision-making, natural language processing, and complex multi-step workflow execution.",
-        icon: Bot,
-        tags: ["LLMs", "Agents", "Workflow Automation"]
-    },
-    {
-        title: "Bespoke Engineering",
-        description: "Beyond off-the-shelf solutions. We build mission-critical applications tailored to your unique operational flows, ensuring maximum efficiency and competitive advantage.",
-        icon: Cpu,
-        tags: ["Full-Stack", "Mobile", "Cloud-Native"]
-    },
-    {
-        title: "System Modernization",
-        description: "Breathe new life into your existing systems. We specialize in migrating legacy monoliths to modern, scalable microservices architectures without disrupting your business.",
-        icon: Layers,
-        tags: ["Migration", "Refactoring", "Optimization"]
-    },
-    {
-        title: "Security & Compliance",
-        description: "Protect your digital assets with enterprise-grade security. We conduct thorough audits, penetration testing, and ensure your systems meet global compliance standards.",
-        icon: ShieldCheck,
-        tags: ["Audit", "SRE", "Cybersecurity"]
-    }
-]
+// Local services definition removed in favor of @/lib/services
 
 const supportPackages = [
     {
@@ -117,22 +82,41 @@ export default function ServicesPage() {
                         <p className="text-xl text-muted-foreground">Deep domain expertise across the entire spectrum of modern enterprise engineering.</p>
                     </div>
 
-                    <div className="grid gap-8 md:grid-cols-2">
+                    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                         {services.map((service, i) => (
-                            <div key={i} className="group p-10 rounded-3xl border border-black/5 bg-white shadow-xl shadow-black/[0.02] hover:shadow-primary/5 hover:border-primary/20 transition-all">
-                                <div className="mb-8 rounded-2xl bg-primary/10 p-5 w-fit text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                                    <service.icon className="h-8 w-8" />
+                            <Link 
+                                key={service.slug} 
+                                href={`/services/${service.slug}`}
+                                className="group flex flex-col rounded-3xl border border-black/5 bg-white shadow-xl shadow-black/[0.02] hover:shadow-primary/5 hover:border-primary/20 transition-all overflow-hidden"
+                            >
+                                <div className="relative aspect-video w-full overflow-hidden">
+                                    <Image 
+                                        src={service.image} 
+                                        alt={service.title} 
+                                        fill 
+                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-6 flex flex-end items-end">
+                                        <div className="rounded-xl bg-white/20 backdrop-blur-md p-3 text-white border border-white/10">
+                                            <service.icon className="h-6 w-6" />
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3 className="text-3xl font-black text-foreground mb-4 leading-tight">{service.title}</h3>
-                                <p className="text-xl text-muted-foreground mb-8 leading-relaxed">{service.description}</p>
-                                <div className="flex flex-wrap gap-2">
-                                    {service.tags.map((tag, j) => (
-                                        <span key={j} className="px-4 py-1.5 rounded-full bg-secondary/5 border border-secondary/10 text-sm font-bold tracking-tight text-secondary">
-                                            {tag}
-                                        </span>
-                                    ))}
+                                <div className="p-8 flex flex-col flex-grow">
+                                    <h3 className="text-2xl font-black text-foreground mb-4 leading-tight">{service.title}</h3>
+                                    <p className="text-lg text-muted-foreground mb-8 leading-relaxed line-clamp-3">{service.description}</p>
+                                    <div className="mt-auto flex items-center justify-between">
+                                        <div className="flex flex-wrap gap-2">
+                                            {service.features.slice(0, 2).map((feature, j) => (
+                                                <span key={j} className="px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-xs font-bold tracking-tight text-primary">
+                                                    {feature}
+                                                </span>
+                                            ))}
+                                        </div>
+                                        <ArrowRight className="h-5 w-5 text-primary opacity-0 -translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0" />
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>

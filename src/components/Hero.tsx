@@ -47,7 +47,7 @@ export function Hero() {
                         transition={{ duration: 0.7, delay: 0.3 }}
                         className="mt-10 max-w-3xl text-xl text-muted-foreground sm:text-2xl leading-relaxed lg:text-3xl"
                     >
-                        We build <span className="text-primary font-bold">custom software</span> and <span className="text-primary font-bold">intelligent AI agents</span>
+                        We build <span className="text-primary font-bold">custom software</span> and <span className="text-primary font-bold">intelligent AI agents </span>
                         tailored to your operational needs. No compromises.
                     </motion.p>
 

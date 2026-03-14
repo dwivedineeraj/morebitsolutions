@@ -82,7 +82,7 @@ export const services: Service[] = [
         fullDescription: "Our Lead Management module uses advanced scoring algorithms to prioritize high-value prospects. It automates the distribution of leads to the right team members, ensuring zero delay in response times. With built-in tracking and conversion analytics, you can optimize your sales funnel with precision.",
         icon: TrendingUp,
         features: ["Automated Lead Scoring", "Smart Distribution", "Conversion Tracking", "CRM Integration"],
-        image: "/images/services/lead-intelligence.png",
+        image: "/images/products/lead-intelligence.png",
         caseStudies: [
             { title: "Global Sales Corp", description: "Increased conversion rates by 45% within three months of implementation." },
             { title: "TechGrowth Solutions", description: "Reduced lead response time from 24 hours to under 15 minutes." }
@@ -99,7 +99,7 @@ export const services: Service[] = [
         fullDescription: "Our Resource Scheduling engine handles complex allocation with ease. Whether it's staffing, classroom management, or client appointments, our system resolves conflicts automatically and sends real-time updates to all stakeholders. It's designed to maximize utilization and minimize idle time.",
         icon: Calendar,
         features: ["Conflict Resolution", "Resource Optimization", "Real-time Reminders", "Multi-platform Sync"],
-        image: "/images/services/dynamic-scheduling.png",
+        image: "/images/products/dynamic-scheduling.png",
         caseStudies: [
             { title: "EduBright Academies", description: "Streamlined scheduling for 50+ locations, saving 200+ hours monthly." },
             { title: "FitForce Gyms", description: "Improved class occupancy by 30% through automated waitlist management." }
@@ -116,7 +116,7 @@ export const services: Service[] = [
         fullDescription: "Our Billing system streamlines the entire quote-to-cash cycle. Handle complex recurring billing, multi-currency transactions, and automated tax compliance without lifting a finger. Our robust ledger integration ensures that your financial data is always accurate and ready for audit.",
         icon: Receipt,
         features: ["Recurring Billing", "Automated Invoicing", "Tax Compliance", "Advanced Ledger Support"],
-        image: "/images/services/flow-commerce.png",
+        image: "/images/products/flow-commerce.png",
         caseStudies: [
             { title: "SaaS Rocket", description: "Automated billing for 10k+ subscribers, reducing churn by 12%." },
             { title: "Nordic Retail", description: "Seamlessly handled multi-currency expansion into 5 new markets." }
@@ -133,7 +133,7 @@ export const services: Service[] = [
         fullDescription: "Eliminate payroll errors and compliance risks. Our Payroll module automates tax calculations, benefit deductions, and direct deposit file generation. It scales from 10 to 10,000 employees with the same level of granular control and reporting accuracy.",
         icon: CreditCard,
         features: ["Automated Tax Calculations", "Direct Deposit Integration", "Compliance Reporting", "Self-service Portals"],
-        image: "/images/services/precision-payroll.png",
+        image: "/images/products/precision-payroll.png",
         caseStudies: [
             { title: "Manufacturing Hub", description: "Achieved 100% payroll accuracy for a workforce of 1,200 employees." },
             { title: "Non-Profit Org", description: "Simplified grant-based payroll distributions and reporting." }
@@ -150,7 +150,7 @@ export const services: Service[] = [
         fullDescription: "Track every billable second. Our Timesheet module provides high-fidelity time tracking integrated directly with project budgets. Monitor profitability in real-time and automate complex approval hierarchies to ensure project health and accurate billing.",
         icon: Clock,
         features: ["Project-wise tracking", "Profitability Analytics", "Approval Workflows", "Mobile-ready Logging"],
-        image: "/images/services/tempo-management.png",
+        image: "/images/products/tempo-management.png",
         caseStudies: [
             { title: "Creative Agency X", description: "Increased billable hours by 18% through more accurate time capture." },
             { title: "Engineering Firm Y", description: "Automated complex multi-level approval workflows for 50+ projects." }
@@ -167,7 +167,7 @@ export const services: Service[] = [
         fullDescription: "Gain total visibility over your supply chain. Our Inventory system tracks stock movements in real-time across multiple locations. Use predictive alerts to prevent stockouts and optimize reorder points based on historical consumption patterns and lead times.",
         icon: ShoppingBag,
         features: ["Multi-warehouse Support", "Predictive Alerts", "Audit Logging", "Barcode/QR Integration"],
-        image: "/images/services/live-inventory.png",
+        image: "/images/products/live-inventory.png",
         caseStudies: [
             { title: "Durable Goods Ltd", description: "Reduced inventory carrying costs by 22% while eliminating stockouts." },
             { title: "Fast-Track Logistics", description: "Optimized picking routes and warehouse layout for 3 major hubs." }

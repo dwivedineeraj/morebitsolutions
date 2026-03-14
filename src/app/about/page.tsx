@@ -3,6 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle2, Linkedin, Sparkles } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 
 const team = [
@@ -10,19 +11,19 @@ const team = [
         name: "Neeraj Dwivedi",
         role: "Co-founder & Chief Architect",
         bio: "Leading our technical vision with deep expertise in full-stack architecture and system design.",
-        initials: "ND",
+        image: "/images/team/neeraj.jpeg",
     },
     {
-        name: "Saurav Kumar",
+        name: "Sukhi",
         role: "Co-founder & Product Lead",
         bio: "Expert in cloud architecture and building highly responsive ERP platforms.",
-        initials: "SK",
+        image: "/images/team/sukhi.jpg",
     },
     {
         name: "Rohan Kapoor",
         role: "Lead Developer",
         bio: "Developing intuitive user interfaces for complex industrial integrations.",
-        initials: "RK",
+        image: "/images/team/rohan.png",
     },
 ]
 
@@ -84,8 +85,17 @@ export default function AboutPage() {
                                 transition={{ delay: index * 0.1 }}
                             >
                                 <Card className="overflow-hidden bg-white/40 border border-primary/5 shadow-xl backdrop-blur-md glass-border group">
-                                    <div className="aspect-square w-full bg-primary/5 flex items-center justify-center text-6xl font-black text-primary/10 transition-all duration-500 group-hover:bg-primary/10 group-hover:text-primary/20">
-                                        {member.initials}
+                                    <div className="aspect-square w-full relative bg-primary/5 flex items-center justify-center text-6xl font-black text-primary/10 transition-all duration-500 group-hover:bg-primary/10">
+                                        {'image' in member ? (
+                                            <Image 
+                                                src={member.image as string} 
+                                                alt={member.name}
+                                                fill
+                                                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                            />
+                                        ) : (
+                                            (member as {initials: string}).initials
+                                        )}
                                     </div>
                                     <CardContent className="p-8">
                                         <h3 className="text-2xl font-bold tracking-tight">{member.name}</h3>

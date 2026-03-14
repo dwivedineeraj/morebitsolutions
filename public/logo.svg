@@ -1,0 +1,47 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="200" fill="transparent"/>
+  
+  <!-- The "M" (Trunk - Brown with Gray Outline) -->
+  <path d="
+    M 35,155 
+    C 40,150 42,100 38,50 
+    C 50,55 75,90 85,105 
+    C 95,90 120,55 132,50 
+    C 128,100 130,150 135,155 
+    L 115,155 
+    C 112,130 114,90 114,90 
+    L 85,125 
+    L 56,90 
+    C 56,90 58,130 55,155 
+    Z
+    " 
+    fill="#5D4037" 
+    stroke="#9CA3AF" 
+    stroke-width="1.5" 
+    stroke-linejoin="round"
+  />
+
+  <!-- The "B" (Leaves - Green with Gray Outline) -->
+  <g fill="#2E7D32" stroke="#9CA3AF" stroke-width="1.5" stroke-linejoin="round">
+    <!-- Top Leaf -->
+    <path d="
+      M 142,55 
+      C 175,50 190,75 165,100 
+      C 155,95 145,95 142,100 
+      V 55 
+      Z
+    " />
+    <!-- Bottom Leaf -->
+    <path d="
+      M 142,105 
+      C 185,105 200,140 165,150 
+      C 155,145 145,145 142,150 
+      V 105 
+      Z
+    " />
+    <!-- Leaf Veins (Subtle details) -->
+    <path d="M 142,75 L 165,75" stroke-opacity="0.3" fill="none"/>
+    <path d="M 142,125 L 170,125" stroke-opacity="0.3" fill="none"/>
+  </g>
+</svg>

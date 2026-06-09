@@ -13,8 +13,8 @@ export default function SweepPrivacyPage() {
                 animate={{ opacity: 1, x: 0 }}
                 className="mb-8"
             >
-                <Link 
-                    href="/privacy" 
+                <Link
+                    href="/privacy"
                     className="inline-flex items-center text-sm font-bold text-muted-foreground hover:text-primary transition-colors group"
                 >
                     <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
@@ -80,7 +80,7 @@ export default function SweepPrivacyPage() {
                         2. Database-Free Architecture (No Storage)
                     </h2>
                     <p>
-                        Unlike traditional applications, Sweep does not maintain a remote database. 
+                        Unlike traditional applications, Sweep does not maintain a remote database.
                     </p>
                     <ul className="list-disc pl-6 space-y-2">
                         <li><strong>Local Execution:</strong> All entered names, nicknames, or usernames are held in-memory or saved solely to your browser's local sandbox storage (such as LocalStorage or SessionStorage).</li>
@@ -119,7 +119,7 @@ export default function SweepPrivacyPage() {
                         If you have questions regarding the local-first architecture of Sweep or our general privacy commitments, feel free to contact us:
                     </p>
                     <p className="m-0">
-                        Email: <a href="mailto:privacy@morebitsolutions.com" className="text-primary hover:underline">privacy@morebitsolutions.com</a>
+                        Email: <a href="mailto:support@morebitsolutions.com" className="text-primary hover:underline">support@morebitsolutions.com</a>
                     </p>
                 </section>
 

@@ -63,6 +63,13 @@ export function Footer() {
                     </div>
 
                     <div>
+                        <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Other Works</h3>
+                        <ul className="space-y-2 text-sm text-secondary-foreground/80">
+                            <li><Link href="/privacy/sweep" className="hover:text-white">Sweep</Link></li>
+                        </ul>
+                    </div>
+
+                    <div>
                         <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Legal</h3>
                         <ul className="space-y-2 text-sm text-secondary-foreground/80">
                             <li><Link href="/privacy" className="hover:text-white">Privacy Policy</Link></li>

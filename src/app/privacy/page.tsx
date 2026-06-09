@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 export default function PrivacyPage() {
     return (
@@ -35,7 +36,16 @@ export default function PrivacyPage() {
                     <h2 className="text-2xl font-bold text-foreground mb-4">3. How We Use Your Data</h2>
                     <p>We will only use your personal data when the law allows us to. Most commonly, we will use your personal data to contact you regarding your inquiries or to provide the services you requested.</p>
                 </section>
-                <p className="text-sm mt-12">Last updated: {new Date().toLocaleDateString()}</p>
+                <section>
+                    <h2 className="text-2xl font-bold text-foreground mb-4">4. App-Specific Policies</h2>
+                    <p>For our proprietary utility applications, we maintain standalone privacy protocols tailored to their specific data-minimization architecture:</p>
+                    <ul className="list-disc pl-6 space-y-2">
+                        <li>
+                            <Link href="/privacy/sweep" className="text-primary hover:underline font-bold">Sweep Privacy Policy</Link> — Learn how Sweep operates under a strict database-free, local-only execution model.
+                        </li>
+                    </ul>
+                </section>
+                <p className="text-sm mt-12">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
             </motion.div>
         </div>
     )

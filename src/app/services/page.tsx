@@ -1,4 +1,4 @@
-import { CheckCircle2, Headphones, Layers, ShieldCheck, Zap, Globe, Cpu, Users, Bot, Database, ArrowRight } from "lucide-react"
+import { CheckCircle2, Zap, Users, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
@@ -6,49 +6,7 @@ import { services } from "@/lib/services"
 
 // Local services definition removed in favor of @/lib/services
 
-const supportPackages = [
-    {
-        name: "Standard",
-        description: "Essential support for maintaining stable operations.",
-        price: "Contact for Pricing",
-        features: [
-            "Business Day Support (9-5)",
-            "Email & Ticket Support",
-            "48-hour Response Time",
-            "Access to Documentation",
-            "Core Security Updates"
-        ],
-        highlighted: false
-    },
-    {
-        name: "Premium",
-        description: "Priority support for high-growth businesses.",
-        price: "Contact for Pricing",
-        features: [
-            "24/7 Critical Support",
-            "Priority Ticket Handling",
-            "4-hour Response Time",
-            "Dedicated Support Channel",
-            "Quarterly Health Audits",
-            "Infrastructure Optimization"
-        ],
-        highlighted: true
-    },
-    {
-        name: "Enterprise",
-        description: "Total engineering partnership for global scale.",
-        price: "Custom Quote",
-        features: [
-            "15-minute Critical Response",
-            "Dedicated Solutions Architect",
-            "On-site Engineering Support",
-            "Custom SLA Agreements",
-            "Full Ecosystem Monitoring",
-            "Direct Engineering Liaison"
-        ],
-        highlighted: false
-    }
-]
+
 
 export default function ServicesPage() {
     return (
@@ -84,16 +42,16 @@ export default function ServicesPage() {
 
                     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                         {services.map((service, i) => (
-                            <Link 
-                                key={service.slug} 
+                            <Link
+                                key={service.slug}
                                 href={`/services/${service.slug}`}
                                 className="group flex flex-col rounded-3xl border border-black/5 bg-white shadow-xl shadow-black/[0.02] hover:shadow-primary/5 hover:border-primary/20 transition-all overflow-hidden"
                             >
                                 <div className="relative aspect-video w-full overflow-hidden">
-                                    <Image 
-                                        src={service.image} 
-                                        alt={service.title} 
-                                        fill 
+                                    <Image
+                                        src={service.image}
+                                        alt={service.title}
+                                        fill
                                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-6 flex flex-end items-end">
@@ -122,56 +80,7 @@ export default function ServicesPage() {
                 </div>
             </section>
 
-            {/* Support Packages */}
-            <section className="py-24 bg-background">
-                <div className="container px-4 sm:px-8 text-center max-w-6xl">
-                    <div className="mb-20">
-                        <div className="inline-flex items-center space-x-2 rounded-full border border-secondary/20 bg-secondary/5 px-4 py-1.5 text-sm font-bold tracking-tight text-secondary mb-6">
-                            <Headphones className="h-4 w-4" />
-                            <span>Unrivaled Support</span>
-                        </div>
-                        <h2 className="text-3xl font-black tracking-tight sm:text-5xl mb-6">Support Engineering</h2>
-                        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Choose a support tier that aligns with your operational criticality and growth velocity.</p>
-                    </div>
 
-                    <div className="grid gap-8 lg:grid-cols-3">
-                        {supportPackages.map((pkg, i) => (
-                            <div
-                                key={i}
-                                className={`relative p-10 rounded-[2.5rem] border transition-all text-left flex flex-col ${pkg.highlighted
-                                    ? "bg-white border-primary shadow-2xl scale-105 z-10"
-                                    : "bg-white/50 border-black/5 hover:border-primary/20"
-                                    }`}
-                            >
-                                {pkg.highlighted && (
-                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-6 py-2 rounded-full bg-primary text-white text-sm font-black uppercase tracking-widest shadow-xl shadow-primary/30">
-                                        Most Popular
-                                    </div>
-                                )}
-                                <div className="mb-8">
-                                    <h3 className="text-3xl font-black mb-2">{pkg.name}</h3>
-                                    <p className="text-muted-foreground font-medium">{pkg.description}</p>
-                                </div>
-                                <div className="mb-10 p-6 rounded-2xl bg-slate-50 border border-black/5">
-                                    <span className="text-2xl font-black tracking-tight">{pkg.price}</span>
-                                </div>
-                                <div className="space-y-4 mb-12 flex-grow">
-                                    {pkg.features.map((feature, j) => (
-                                        <div key={j} className="flex items-start gap-3">
-                                            <CheckCircle2 className={`h-5 w-5 mt-0.5 ${pkg.highlighted ? "text-primary" : "text-muted-foreground/50"}`} />
-                                            <span className="font-bold text-foreground/80 leading-snug">{feature}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                                <Button className={`w-full h-16 rounded-2xl text-xl font-bold shadow-xl transition-all ${pkg.highlighted ? "bg-primary shadow-primary/20 hover:scale-105" : "bg-foreground shadow-black/10 hover:scale-105"
-                                    }`} asChild>
-                                    <Link href="/contact">Select Package</Link>
-                                </Button>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             {/* CTA Section */}
             <section className="py-24 container px-4 sm:px-8">

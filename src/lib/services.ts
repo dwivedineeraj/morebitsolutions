@@ -19,8 +19,6 @@ export interface Service {
     icon: LucideIcon;
     features: string[];
     image: string;
-    caseStudies?: { title: string; description: string }[];
-    customers?: { name: string; logo: string }[];
 }
 
 export const services: Service[] = [
@@ -32,14 +30,6 @@ export const services: Service[] = [
         icon: Bot,
         features: ["Autonomous Workflows", "Natural Language Processing", "Contextual Memory", "Legacy System Integration"],
         image: "/images/services/agentic-ai.png",
-        caseStudies: [
-            { title: "FinTech Global", description: "Automated 70% of level-1 compliance checks with perfect accuracy." },
-            { title: "Retail Giant", description: "Reduced customer escalation rates by 45% using empathetic AI agents." }
-        ],
-        customers: [
-            { name: "FinTech Global", logo: "/images/customers/customer13.png" },
-            { name: "Retail Giant", logo: "/images/customers/customer14.png" }
-        ]
     },
     {
         slug: "private-ai-deployment",
@@ -49,14 +39,6 @@ export const services: Service[] = [
         icon: ShieldCheck,
         features: ["Data Sovereignty", "On-Premise Hosting", "Custom Model Tuning", "Secure API Wrappers"],
         image: "/images/services/private-ai.png",
-        caseStudies: [
-            { title: "Pushkar Scents", description: "Deployed private RAG system for secure recipe management and supply chain optimization." },
-            { title: "SecureBank", description: "Implemented air-gapped LLM for internal document analysis." }
-        ],
-        customers: [
-            { name: "Pushkar Scents", logo: "/images/customers/customer17.png" },
-            { name: "SecureBank", logo: "/images/customers/customer18.png" }
-        ]
     },
     {
         slug: "knowledge-base",
@@ -66,14 +48,6 @@ export const services: Service[] = [
         icon: BookOpen,
         features: ["Conversational Search", "Automated Summarization", "Cross-Silo Integration", "Real-time Updates"],
         image: "/images/services/knowledge-base.png",
-        caseStudies: [
-            { title: "Enterprise Corp", description: "Reduced internal IT support tickets by 60% in the first quarter." },
-            { title: "Legal Partners", description: "Saved 15 hours per week for analysts searching through case history." }
-        ],
-        customers: [
-            { name: "Enterprise Corp", logo: "/images/customers/customer15.png" },
-            { name: "Legal Partners", logo: "/images/customers/customer16.png" }
-        ]
     },
     {
         slug: "lead-management",
@@ -83,14 +57,6 @@ export const services: Service[] = [
         icon: TrendingUp,
         features: ["Automated Lead Scoring", "Smart Distribution", "Conversion Tracking", "CRM Integration"],
         image: "/images/products/lead-intelligence.png",
-        caseStudies: [
-            { title: "Global Sales Corp", description: "Increased conversion rates by 45% within three months of implementation." },
-            { title: "TechGrowth Solutions", description: "Reduced lead response time from 24 hours to under 15 minutes." }
-        ],
-        customers: [
-            { name: "Global Sales Corp", logo: "/images/customers/customer1.png" },
-            { name: "TechGrowth Solutions", logo: "/images/customers/customer2.png" }
-        ]
     },
     {
         slug: "resource-scheduling",
@@ -100,14 +66,6 @@ export const services: Service[] = [
         icon: Calendar,
         features: ["Conflict Resolution", "Resource Optimization", "Real-time Reminders", "Multi-platform Sync"],
         image: "/images/products/dynamic-scheduling.png",
-        caseStudies: [
-            { title: "EduBright Academies", description: "Streamlined scheduling for 50+ locations, saving 200+ hours monthly." },
-            { title: "FitForce Gyms", description: "Improved class occupancy by 30% through automated waitlist management." }
-        ],
-        customers: [
-            { name: "EduBright Academies", logo: "/images/customers/customer3.png" },
-            { name: "FitForce Gyms", logo: "/images/customers/customer4.png" }
-        ]
     },
     {
         slug: "billing-invoicing",
@@ -117,14 +75,6 @@ export const services: Service[] = [
         icon: Receipt,
         features: ["Recurring Billing", "Automated Invoicing", "Tax Compliance", "Advanced Ledger Support"],
         image: "/images/products/flow-commerce.png",
-        caseStudies: [
-            { title: "SaaS Rocket", description: "Automated billing for 10k+ subscribers, reducing churn by 12%." },
-            { title: "Nordic Retail", description: "Seamlessly handled multi-currency expansion into 5 new markets." }
-        ],
-        customers: [
-            { name: "SaaS Rocket", logo: "/images/customers/customer5.png" },
-            { name: "Nordic Retail", logo: "/images/customers/customer6.png" }
-        ]
     },
     {
         slug: "payroll-management",
@@ -134,14 +84,6 @@ export const services: Service[] = [
         icon: CreditCard,
         features: ["Automated Tax Calculations", "Direct Deposit Integration", "Compliance Reporting", "Self-service Portals"],
         image: "/images/products/precision-payroll.png",
-        caseStudies: [
-            { title: "Manufacturing Hub", description: "Achieved 100% payroll accuracy for a workforce of 1,200 employees." },
-            { title: "Non-Profit Org", description: "Simplified grant-based payroll distributions and reporting." }
-        ],
-        customers: [
-            { name: "Manufacturing Hub", logo: "/images/customers/customer7.png" },
-            { name: "Non-Profit Org", logo: "/images/customers/customer8.png" }
-        ]
     },
     {
         slug: "timesheet-tracking",
@@ -151,14 +93,6 @@ export const services: Service[] = [
         icon: Clock,
         features: ["Project-wise tracking", "Profitability Analytics", "Approval Workflows", "Mobile-ready Logging"],
         image: "/images/products/tempo-management.png",
-        caseStudies: [
-            { title: "Creative Agency X", description: "Increased billable hours by 18% through more accurate time capture." },
-            { title: "Engineering Firm Y", description: "Automated complex multi-level approval workflows for 50+ projects." }
-        ],
-        customers: [
-            { name: "Creative Agency X", logo: "/images/customers/customer9.png" },
-            { name: "Engineering Firm Y", logo: "/images/customers/customer10.png" }
-        ]
     },
     {
         slug: "inventory-management",
@@ -168,13 +102,5 @@ export const services: Service[] = [
         icon: ShoppingBag,
         features: ["Multi-warehouse Support", "Predictive Alerts", "Audit Logging", "Barcode/QR Integration"],
         image: "/images/products/live-inventory.png",
-        caseStudies: [
-            { title: "Durable Goods Ltd", description: "Reduced inventory carrying costs by 22% while eliminating stockouts." },
-            { title: "Fast-Track Logistics", description: "Optimized picking routes and warehouse layout for 3 major hubs." }
-        ],
-        customers: [
-            { name: "Durable Goods Ltd", logo: "/images/customers/customer11.png" },
-            { name: "Fast-Track Logistics", logo: "/images/customers/customer12.png" }
-        ]
     },
 ]

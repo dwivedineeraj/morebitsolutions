@@ -97,22 +97,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 </div>
             </section>
 
-            {/* Case Studies */}
-            {service.caseStudies && (
-                <section className="py-24 bg-background">
-                    <div className="container px-4 sm:px-8">
-                        <h2 className="text-4xl font-black tracking-tight mb-16">Proof of <span className="text-primary italic">Value</span></h2>
-                        <div className="grid gap-8 md:grid-cols-2">
-                            {service.caseStudies.map((study) => (
-                                <div key={study.title} className="p-10 rounded-3xl bg-slate-50 border border-black/5 hover:border-primary/20 transition-all">
-                                    <h3 className="text-2xl font-black mb-4">{study.title}</h3>
-                                    <p className="text-lg text-muted-foreground leading-relaxed">{study.description}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            )}
+
 
             {/* CTA */}
             <section className="py-24 container px-4 sm:px-8">

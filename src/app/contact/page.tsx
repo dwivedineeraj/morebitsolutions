@@ -84,71 +84,7 @@ export default function ContactPage() {
     }
 
     return (
-        <div className="flex flex-col min-h-screen">
-
-            {/* ── Hero ── */}
-            <section className="relative overflow-hidden bg-background pt-40 pb-24 lg:pt-56 lg:pb-32">
-                <div className="absolute inset-0 z-0 mesh-gradient opacity-40" />
-                <div className="absolute left-[-8%] top-[5%] h-[500px] w-[500px] rounded-full bg-primary/10 blur-[120px] animate-pulse-slow" />
-                <div className="absolute right-[-5%] bottom-[10%] h-[350px] w-[350px] rounded-full bg-secondary/10 blur-[100px] animate-float" />
-
-                <div className="container relative z-10 px-4 sm:px-8">
-                    <motion.div
-                        initial={{ opacity: 0, y: 24 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="max-w-4xl"
-                    >
-                        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-bold text-primary">
-                            <Sparkles className="h-4 w-4" />
-                            <span>Let&apos;s Build Something Remarkable</span>
-                        </div>
-
-                        <h1 className="text-5xl font-black tracking-tighter sm:text-7xl lg:text-8xl leading-[0.95] mb-8">
-                            Your next big idea<br />
-                            deserves{" "}
-                            <span
-                                style={{
-                                    background: "linear-gradient(90deg, #2E7D32 0%, #66bb6a 40%, #2E7D32 60%, #1b5e20 100%)",
-                                    backgroundSize: "200% auto",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                    backgroundClip: "text",
-                                    animation: "shimmer 3s linear infinite",
-                                }}
-                            >
-                                the right team.
-                            </span>
-                        </h1>
-
-                        <p className="text-xl text-muted-foreground leading-relaxed lg:text-2xl max-w-3xl mb-12">
-                            We read every submission personally. Describe your challenge and we&apos;ll come back with a clear plan — not a sales pitch.
-                        </p>
-
-                        {/* Stats */}
-                        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 max-w-2xl">
-                            {[
-                                { icon: Globe, stat: "10+", label: "Years in Engineering" },
-                                { icon: Code2, stat: "50+", label: "Systems Shipped" },
-                                { icon: Users, stat: "20+", label: "Enterprise Clients" },
-                                { icon: Brain, stat: "∞", label: "Problems Solved" },
-                            ].map(({ icon: Icon, stat, label }) => (
-                                <motion.div
-                                    key={label}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.3 }}
-                                    className="rounded-2xl border border-primary/10 bg-white/50 backdrop-blur-md p-4 text-center glass-border"
-                                >
-                                    <Icon className="h-4 w-4 text-primary mx-auto mb-2" />
-                                    <p className="text-2xl font-black text-foreground">{stat}</p>
-                                    <p className="text-[11px] font-bold text-muted-foreground/70 leading-tight mt-1">{label}</p>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
+        <div className="flex flex-col min-h-screen mt-10">
 
             {/* ── Form ── */}
             <section className="py-24 bg-slate-50 relative z-20">
